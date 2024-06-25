@@ -26,4 +26,5 @@ after_success:
   - docker push psnehi/multi-nginx
   - docker push psnehi/multi-server 
   - docker push psnehi/multi-worker
+  
   # all images push to the docker hub
