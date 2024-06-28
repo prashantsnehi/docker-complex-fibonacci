@@ -15,17 +15,17 @@ script:
 
 # create docker of each service
 after_success:
-  - docker build -t psnehi/multi-client:v1 ./client
-  - docker build -t psnehi/multi-nginx:v1 ./nginx
-  - docker build -t psnehi/multi-server:v1 ./server
-  - docker build -t psnehi/multi-worker:v1 ./worker
+  - docker build -t psnehi/multi-client:v2 ./client
+  - docker build -t psnehi/multi-nginx:v2 ./nginx
+  - docker build -t psnehi/multi-server:v2 ./server
+  - docker build -t psnehi/multi-worker:v2 ./worker
   # log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # take those images to the Dockerhub
-  - docker push psnehi/multi-client:v1
-  - docker push psnehi/multi-nginx:v1
-  - docker push psnehi/multi-server:v1 
-  - docker push psnehi/multi-worker:v1
+  - docker push psnehi/multi-client:v2
+  - docker push psnehi/multi-nginx:v2
+  - docker push psnehi/multi-server:v2 
+  - docker push psnehi/multi-worker:v2
   # all images push to the docker hub
 
 deploy: 

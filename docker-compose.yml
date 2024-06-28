@@ -1,11 +1,11 @@
 version: '3'
 services:
   client:
-    image: "psnehi/multi-client:v1"
+    image: "psnehi/multi-client:v2"
     mem_limit: 128m
     hostname: client
   server:
-    image: "psnehi/multi-server:v1"
+    image: "psnehi/multi-server:v2"
     mem_limit: 128m
     hostname: api
     environment:
@@ -16,7 +16,7 @@ services:
       - PGDATABASE=$PGDATABASE
       - PGPASSWORD=$PGPASSWORD
   worker:
-    image: "psnehi/multi-worker:v1"
+    image: "psnehi/multi-worker:v2"
     mem_limit: 128m
     hostname: worker
     environment:
