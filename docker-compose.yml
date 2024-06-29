@@ -1,23 +1,23 @@
 version: '3'
 services:
   client:
-    image: "psnehi/multi-client:v3"
+    image: "psnehi/multi-client:v4"
     mem_limit: 128m
     hostname: client
   server:
-    image: "psnehi/multi-server:v3"
+    image: "psnehi/multi-server:v4"
     mem_limit: 128m
     hostname: api
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
-      - PGUSER=$PGUSER
       - PGHOST=$PGHOST
       - PGDATABASE=$PGDATABASE
+      - PGUSER=$PGUSER
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   worker:
-    image: "psnehi/multi-worker:v3"
+    image: "psnehi/multi-worker:v4"
     mem_limit: 128m
     hostname: worker
     environment:
@@ -25,7 +25,7 @@ services:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
   nginx: 
-    image: "psnehi/multi-nginx:v3"
+    image: "psnehi/multi-nginx:v4"
     mem_limit: 128m
     hostname: nginx
     ports:
