@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: client
-    image: psnehi/multi-client:v4
+    image: stephengrider/multi-client
     resources:
       limits:
         memory: "128Mi"
